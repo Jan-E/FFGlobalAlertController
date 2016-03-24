@@ -26,11 +26,20 @@
     
     NSString *message = [NSString stringWithFormat:@"This is your alert, you've show %ld alerts", (long)alertCount];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Global Alert" message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [alert addAction:[UIAlertAction actionWithTitle:@"One" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"One");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Two" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         NSLog(@"OK");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Three" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"Three");
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         NSLog(@"Cancel");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Destroy"style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSLog(@"Destroy");
     }]];
     [alert show];
     alertCount++;
