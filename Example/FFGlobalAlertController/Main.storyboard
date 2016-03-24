@@ -52,7 +52,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="showAlert:" destination="whP-gf-Uak" eventType="editingDidBegin" id="Sfz-YJ-Xhk"/>
+                                    <action selector="showAlertCombo:" destination="whP-gf-Uak" eventType="editingDidBegin" id="Sfz-YJ-Xhk"/>
                                 </connections>
                             </textField>
                         </subviews>

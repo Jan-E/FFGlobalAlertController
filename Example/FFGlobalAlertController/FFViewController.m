@@ -44,12 +44,30 @@
     [alert show];
     alertCount++;
     
-// show a second Alert to simulate an Alert coming in from an unrelated part of your project
+    // show a second Alert to simulate an Alert coming in from an unrelated part of your project
     if (alertCount % 2 == 0) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self showAlert:nil];
         });
     }
+}
+
+- (IBAction)showAlertCombo:(id)sender
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Global Alert" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"One" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"One");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Two" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"OK");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Three" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSLog(@"Three");
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"Cancel");
+    }]];
+    [alert show];
 }
 
 - (IBAction)showAlertField:(id)sender
