@@ -51,10 +51,13 @@
                                 <rect key="frame" x="225" y="162" width="100" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="showAlertCombo:" destination="whP-gf-Uak" eventType="editingDidBegin" id="Sfz-YJ-Xhk"/>
-                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-au-q60">
+                                <rect key="frame" x="218" y="158" width="114" height="37"/>
+                                <connections>
+                                    <action selector="showAlertCombo:" destination="whP-gf-Uak" eventType="touchUpInside" id="djt-cL-83P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

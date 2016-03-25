@@ -57,12 +57,15 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Global Alert" message:@"" preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"One" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         NSLog(@"One");
+        self.projectField.text = @"One";
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"Two" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSLog(@"OK");
+        NSLog(@"Two");
+        self.projectField.text = @"Two";
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"Three" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         NSLog(@"Three");
+        self.projectField.text = @"Three";
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         NSLog(@"Cancel");
