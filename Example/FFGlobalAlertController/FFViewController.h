@@ -10,4 +10,8 @@
 
 @interface FFViewController : UIViewController
 
+@property (nonatomic) IBOutlet UITextField *projectField;
+@property (nonatomic) IBOutlet UITextField *usernameText;
+@property (nonatomic) IBOutlet UITextField *passwordText;
+
 @end
