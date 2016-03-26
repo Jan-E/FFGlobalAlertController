@@ -55,18 +55,28 @@
 - (IBAction)showAlertCombo:(id)sender
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Global Alert" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"One" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSLog(@"One");
-        self.projectField.text = @"One";
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Two" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSLog(@"Two");
-        self.projectField.text = @"Two";
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Three" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSLog(@"Three");
-        self.projectField.text = @"Three";
-    }]];
+    NSMutableArray *selectButtons = [[NSMutableArray alloc] init];
+    [selectButtons addObject:[NSString stringWithFormat:@"One"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Two"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Three"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Four"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Five"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Six"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Seven"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Eight"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Nine"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Ten"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Eleven"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Twelve"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Thirteen"]];
+    [selectButtons addObject:[NSString stringWithFormat:@"Fourteen"]];
+    for (id obj in selectButtons) {
+        NSString *selectButton = obj;
+        [alert addAction:[UIAlertAction actionWithTitle:selectButton style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            NSLog(@"button %@", selectButton);
+            self.projectField.text = selectButton;
+        }]];
+    }
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         NSLog(@"Cancel");
     }]];
