@@ -37,34 +37,19 @@
 
 - (IBAction)showAlert:(id)sender
 {
-    static NSInteger alertCount = 1;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:@"Please wait\n\n\n"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
-    NSString *message = [NSString stringWithFormat:@"This is your alert, you've show %ld alerts", (long)alertCount];
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Global Alert" message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"One" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSLog(@"One");
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Two" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSLog(@"OK");
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Three" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSLog(@"Three");
-    }]];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.center = CGPointMake(130.5, 65.5);
+    spinner.color = [UIColor blackColor];
+    [spinner startAnimating];
+    [alert.view addSubview:spinner];
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         NSLog(@"Cancel");
     }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Destroy"style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        NSLog(@"Destroy");
-    }]];
-    [alert show];
-    alertCount++;
-    
-    // show a second Alert to simulate an Alert coming in from an unrelated part of your project
-    if (alertCount % 2 == 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self showAlert:nil];
-        });
-    }
+    [self presentViewController:alert animated:NO completion:nil];
 }
 
 - (IBAction)showAlertCombo:(id)sender
