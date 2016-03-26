@@ -32,7 +32,7 @@
     [self.globButtons addObject:[NSString stringWithFormat:@"Eleven"]];
     [self.globButtons addObject:[NSString stringWithFormat:@"Twelve"]];
     [self.globButtons addObject:[NSString stringWithFormat:@"Thirteen"]];
-    [self.globButtons addObject:[NSString stringWithFormat:@"Fourteen"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Nineteen Hundred Eighty Four - George Orwell"]];
 }
 
 - (IBAction)showAlert:(id)sender
@@ -41,11 +41,9 @@
                                                                    message:@"Please wait\n\n\n"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    spinner.center = CGPointMake(130.5, 65.5);
-    spinner.color = [UIColor blackColor];
-    [spinner startAnimating];
-    [alert.view addSubview:spinner];
+    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 0.0, 250, 216.0)];
+    picker.center = CGPointMake(135.0, 65.5);
+    [alert.view addSubview:picker];
     [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         NSLog(@"Cancel");
     }]];
