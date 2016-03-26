@@ -1,0 +1,14 @@
+PODS:
+  - FFGlobalAlertController (1.0.2)
+
+DEPENDENCIES:
+  - FFGlobalAlertController (from `../`)
+
+EXTERNAL SOURCES:
+  FFGlobalAlertController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FFGlobalAlertController: 42f4d0428b13c49520a9adc4c2dd6a8183f385a1
+
+COCOAPODS: 0.39.0
