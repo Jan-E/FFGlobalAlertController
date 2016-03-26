@@ -10,7 +10,7 @@
 #import "UIAlertController+Window.h"
 
 @interface FFViewController ()
-
+@property (nonatomic, strong) NSMutableArray *globButtons;
 @end
 
 @implementation FFViewController
@@ -18,6 +18,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.globButtons = [[NSMutableArray alloc]init];
+    [self.globButtons addObject:[NSString stringWithFormat:@"One"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Two"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Three"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Four"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Five"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Six"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Seven"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Eight"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Nine"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Ten"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Eleven"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Twelve"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Thirteen"]];
+    [self.globButtons addObject:[NSString stringWithFormat:@"Fourteen"]];
 }
 
 - (IBAction)showAlert:(id)sender
@@ -55,21 +70,7 @@
 - (IBAction)showAlertCombo:(id)sender
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Global Alert" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    NSMutableArray *selectButtons = [[NSMutableArray alloc] init];
-    [selectButtons addObject:[NSString stringWithFormat:@"One"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Two"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Three"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Four"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Five"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Six"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Seven"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Eight"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Nine"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Ten"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Eleven"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Twelve"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Thirteen"]];
-    [selectButtons addObject:[NSString stringWithFormat:@"Fourteen"]];
+    NSMutableArray *selectButtons = self.globButtons;
     for (id obj in selectButtons) {
         NSString *selectButton = obj;
         [alert addAction:[UIAlertAction actionWithTitle:selectButton style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
