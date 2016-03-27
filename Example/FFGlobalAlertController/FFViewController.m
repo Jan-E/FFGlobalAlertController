@@ -35,7 +35,7 @@
     [self.globButtons addObject:[NSString stringWithFormat:@"Thirteen"]];
     [self.globButtons addObject:[NSString stringWithFormat:@"Nineteen Hundred Eighty Four - George Orwell"]];
 
-    _countryNames = @[@"Australia (AUD)", @"China (CNY)",
+    _countryNames = @[@"Australia (AUD)", @"People's Republic of China (CNY)",
                       @"France (EUR)", @"Great Britain (GBP)", @"Japan (JPY)"];
     
     _exchangeRates = @[ @0.9922f, @6.5938f, @0.7270f,
