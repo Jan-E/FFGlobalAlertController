@@ -46,6 +46,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-au-q60">
+                                <rect key="frame" x="110" y="129" width="329" height="37"/>
+                                <connections>
+                                    <action selector="showAlertCombo:" destination="whP-gf-Uak" eventType="touchUpInside" id="djt-cL-83P"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100.00" borderStyle="roundedRect" placeholder="US Dollars (USD)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2L-kH-Tfo">
                                 <rect key="frame" x="195" y="174" width="158" height="30"/>
                                 <nil key="textColor"/>
@@ -57,12 +63,6 @@
                                     <outlet property="delegate" destination="lp6-Qk-gS0" id="iGJ-gF-jQa"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-Pj-h67">
-                                <rect key="frame" x="110" y="206" width="329" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-Qk-gS0">
                                 <rect key="frame" x="0.0" y="231" width="550" height="216"/>
                                 <connections>
@@ -70,12 +70,12 @@
                                     <outlet property="delegate" destination="whP-gf-Uak" id="v7M-Iz-M3n"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-au-q60">
-                                <rect key="frame" x="110" y="129" width="329" height="37"/>
-                                <connections>
-                                    <action selector="showAlertCombo:" destination="whP-gf-Uak" eventType="touchUpInside" id="djt-cL-83P"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-Pj-h67">
+                                <rect key="frame" x="0.0" y="203" width="550" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
