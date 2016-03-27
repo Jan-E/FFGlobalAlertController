@@ -45,14 +45,17 @@
 - (IBAction)showAlert:(id)sender
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:@"Please wait\n\n\n"
+                                                                   message:@"Take your pick\n\n\n\n\n\n\n"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
-    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 0.0, 250, 216.0)];
-    picker.center = CGPointMake(135.0, 65.5);
+    UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 0.0, 270, 216.0)];
+    picker.center = CGPointMake(135.0, 131.0);
+    //set the pickers datasource and delegate
+    picker.delegate = self;
+    picker.dataSource = self;
     [alert.view addSubview:picker];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        NSLog(@"Cancel");
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK"style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        NSLog(@"OK");
     }]];
     [self presentViewController:alert animated:NO completion:nil];
 }

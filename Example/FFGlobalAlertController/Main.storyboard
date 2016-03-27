@@ -24,8 +24,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzK-eb-wrm">
-                                <rect key="frame" x="238" y="65" width="75" height="30"/>
-                                <state key="normal" title="Show Alert">
+                                <rect key="frame" x="159" y="65" width="233" height="30"/>
+                                <state key="normal" title="Picker in Alert">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -34,7 +34,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRO-wF-azf">
                                 <rect key="frame" x="189" y="95" width="173" height="30"/>
-                                <state key="normal" title="Show Alert with TextField">
+                                <state key="normal" title="Alert with TextField">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -52,17 +52,6 @@
                                     <action selector="showAlertCombo:" destination="whP-gf-Uak" eventType="touchUpInside" id="djt-cL-83P"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="US Dollars (USD)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2L-kH-Tfo">
-                                <rect key="frame" x="196" y="174" width="158" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                <connections>
-                                    <action selector="textFieldReturn:" destination="whP-gf-Uak" eventType="editingDidEndOnExit" id="KYp-30-jiK"/>
-                                    <action selector="textFieldReturn:" destination="whP-gf-Uak" eventType="editingDidEnd" id="hf8-Sk-Fih"/>
-                                    <outlet property="delegate" destination="lp6-Qk-gS0" id="iGJ-gF-jQa"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-Pj-h67">
                                 <rect key="frame" x="110" y="206" width="329" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -76,6 +65,17 @@
                                     <outlet property="delegate" destination="whP-gf-Uak" id="v7M-Iz-M3n"/>
                                 </connections>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100.00" borderStyle="roundedRect" placeholder="US Dollars (USD)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2L-kH-Tfo">
+                                <rect key="frame" x="195" y="174" width="158" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="whP-gf-Uak" eventType="editingDidEndOnExit" id="KYp-30-jiK"/>
+                                    <action selector="textFieldReturn:" destination="whP-gf-Uak" eventType="editingDidEnd" id="hf8-Sk-Fih"/>
+                                    <outlet property="delegate" destination="lp6-Qk-gS0" id="iGJ-gF-jQa"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
