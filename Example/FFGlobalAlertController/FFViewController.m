@@ -82,6 +82,7 @@ numberOfRowsInComponent:(NSInteger)component
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
       inComponent:(NSInteger)component
 {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
     float rate = [_exchangeRates[row] floatValue];
     float dollars = [_dollarText.text floatValue];
     float result = dollars * rate;
