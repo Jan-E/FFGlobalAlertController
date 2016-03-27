@@ -9,6 +9,12 @@
 @import UIKit;
 
 @interface FFViewController : UIViewController
+<UIPickerViewDelegate, UIPickerViewDataSource>
+
+@property (strong, nonatomic) NSArray *countryNames;
+@property (strong, nonatomic) NSArray *exchangeRates;
+@property (nonatomic) IBOutlet UITextField *dollarText;
+@property (nonatomic) IBOutlet UILabel *resultLabel;
 
 @property (nonatomic) IBOutlet UITextField *projectField;
 @property (nonatomic) IBOutlet UITextField *usernameText;

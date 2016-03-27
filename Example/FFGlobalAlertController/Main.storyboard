@@ -41,35 +41,55 @@
                                     <action selector="showAlertField:" destination="whP-gf-Uak" eventType="touchUpInside" id="Iqh-Dy-dEH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC2-aU-skb">
-                                <rect key="frame" x="237" y="133" width="77" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Begin" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y4c-LJ-mNw" userLabel="Project" propertyAccessControl="none">
-                                <rect key="frame" x="110" y="162" width="329" height="30"/>
+                                <rect key="frame" x="110" y="133" width="329" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-au-q60">
-                                <rect key="frame" x="110" y="158" width="329" height="37"/>
+                                <rect key="frame" x="110" y="129" width="329" height="37"/>
                                 <connections>
                                     <action selector="showAlertCombo:" destination="whP-gf-Uak" eventType="touchUpInside" id="djt-cL-83P"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="US Dollars (USD)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2L-kH-Tfo">
+                                <rect key="frame" x="196" y="174" width="158" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="whP-gf-Uak" eventType="editingDidEndOnExit" id="KYp-30-jiK"/>
+                                    <action selector="textFieldReturn:" destination="whP-gf-Uak" eventType="editingDidEnd" id="hf8-Sk-Fih"/>
+                                    <outlet property="delegate" destination="lp6-Qk-gS0" id="iGJ-gF-jQa"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-Pj-h67">
+                                <rect key="frame" x="110" y="206" width="329" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-Qk-gS0">
+                                <rect key="frame" x="0.0" y="231" width="550" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="whP-gf-Uak" id="T2r-uD-syv"/>
+                                    <outlet property="delegate" destination="whP-gf-Uak" id="v7M-Iz-M3n"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="550" height="500"/>
                     <connections>
+                        <outlet property="dollarText" destination="H2L-kH-Tfo" id="pyR-Tu-t6N"/>
                         <outlet property="projectField" destination="Y4c-LJ-mNw" id="879-Wo-5ms"/>
+                        <outlet property="resultLabel" destination="cFw-Pj-h67" id="fbY-DB-cTK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-51" y="-32"/>
+            <point key="canvasLocation" x="-170" y="212"/>
         </scene>
     </scenes>
 </document>

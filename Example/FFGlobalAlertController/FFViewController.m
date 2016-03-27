@@ -18,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.globButtons = [[NSMutableArray alloc]init];
     [self.globButtons addObject:[NSString stringWithFormat:@"One"]];
     [self.globButtons addObject:[NSString stringWithFormat:@"Two"]];
@@ -33,6 +34,12 @@
     [self.globButtons addObject:[NSString stringWithFormat:@"Twelve"]];
     [self.globButtons addObject:[NSString stringWithFormat:@"Thirteen"]];
     [self.globButtons addObject:[NSString stringWithFormat:@"Nineteen Hundred Eighty Four - George Orwell"]];
+
+    _countryNames = @[@"Australia (AUD)", @"China (CNY)",
+                      @"France (EUR)", @"Great Britain (GBP)", @"Japan (JPY)"];
+    
+    _exchangeRates = @[ @0.9922f, @6.5938f, @0.7270f,
+                        @0.6206f, @81.57f];
 }
 
 - (IBAction)showAlert:(id)sender
@@ -48,6 +55,46 @@
         NSLog(@"Cancel");
     }]];
     [self presentViewController:alert animated:NO completion:nil];
+}
+
+#pragma mark PickerView DataSource
+
+- (NSInteger)numberOfComponentsInPickerView:
+(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    return _countryNames.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+    return _countryNames[row];
+}
+
+#pragma mark PickerView Delegate
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
+      inComponent:(NSInteger)component
+{
+    float rate = [_exchangeRates[row] floatValue];
+    float dollars = [_dollarText.text floatValue];
+    float result = dollars * rate;
+    
+    NSString *resultString = [[NSString alloc] initWithFormat:
+                              @"%.2f USD = %.2f %@", dollars, result,
+                              _countryNames[row]];
+    _resultLabel.text = resultString;
+}
+
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
 }
 
 - (IBAction)showAlertCombo:(id)sender
