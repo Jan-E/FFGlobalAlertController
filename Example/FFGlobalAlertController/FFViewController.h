@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSArray *countryNames;
 @property (strong, nonatomic) NSArray *exchangeRates;
+@property (nonatomic) NSInteger pickerRow;
 @property (nonatomic) IBOutlet UITextField *dollarText;
 @property (nonatomic) IBOutlet UILabel *resultLabel;
 

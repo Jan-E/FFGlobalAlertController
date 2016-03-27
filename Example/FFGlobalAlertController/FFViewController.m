@@ -45,7 +45,7 @@
 - (IBAction)showAlert:(id)sender
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:@"Take your pick\n\n\n\n\n\n\n"
+                                                                   message:@"Take your pick\n\n\n\n\n\n\n\n"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0.0, 0.0, 270, 216.0)];
@@ -57,6 +57,12 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"OK"style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         NSLog(@"OK");
     }]];
+    //load with selected row
+    int row = (int)self.pickerRow;
+    if (row > 0) {
+        [picker reloadAllComponents];
+        [picker selectRow:row inComponent:0 animated:YES];
+    }
     [self presentViewController:alert animated:NO completion:nil];
 }
 
@@ -85,15 +91,17 @@ numberOfRowsInComponent:(NSInteger)component
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
       inComponent:(NSInteger)component
 {
+    // dismiss keyboard
     [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+    // update resullabel
     float rate = [_exchangeRates[row] floatValue];
     float dollars = [_dollarText.text floatValue];
     float result = dollars * rate;
-    
     NSString *resultString = [[NSString alloc] initWithFormat:
                               @"%.2f USD = %.2f %@", dollars, result,
                               _countryNames[row]];
     _resultLabel.text = resultString;
+    self.pickerRow = row;
 }
 
 -(IBAction)textFieldReturn:(id)sender
