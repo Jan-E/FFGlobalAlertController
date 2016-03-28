@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,23 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="550" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Global UIAlertController Demo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy0-iQ-vlf">
-                                <rect key="frame" x="159" y="28" width="233" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Global UIAlertController Demo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy0-iQ-vlf">
+                                <rect key="frame" x="159" y="20" width="233" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="Wc8-Jl-MU3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzK-eb-wrm">
-                                <rect key="frame" x="159" y="65" width="233" height="30"/>
-                                <state key="normal" title="Picker in Alert">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showAlert:" destination="whP-gf-Uak" eventType="touchUpInside" id="1xu-5D-q7v"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRO-wF-azf">
-                                <rect key="frame" x="189" y="95" width="173" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRO-wF-azf">
+                                <rect key="frame" x="189" y="82" width="173" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Pbc-mY-DB4"/>
+                                    <constraint firstAttribute="width" constant="173" id="vDd-dd-U2B"/>
+                                </constraints>
                                 <state key="normal" title="Alert with TextField">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,19 +40,23 @@
                                     <action selector="showAlertField:" destination="whP-gf-Uak" eventType="touchUpInside" id="Iqh-Dy-dEH"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alert with Multiple Rows" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y4c-LJ-mNw" userLabel="Project" propertyAccessControl="none">
-                                <rect key="frame" x="110" y="133" width="329" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alert with Multiple Rows" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y4c-LJ-mNw" userLabel="Project" propertyAccessControl="none">
+                                <rect key="frame" x="39" y="118" width="472" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-au-q60">
-                                <rect key="frame" x="110" y="129" width="329" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-au-q60">
+                                <rect key="frame" x="39" y="114" width="472" height="37"/>
                                 <connections>
                                     <action selector="showAlertCombo:" destination="whP-gf-Uak" eventType="touchUpInside" id="djt-cL-83P"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100.00" borderStyle="roundedRect" placeholder="US Dollars (USD)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2L-kH-Tfo">
-                                <rect key="frame" x="195" y="174" width="158" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100.00" borderStyle="roundedRect" placeholder="US Dollars (USD)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2L-kH-Tfo">
+                                <rect key="frame" x="196" y="159" width="158" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8R3-cb-jlw"/>
+                                    <constraint firstAttribute="width" constant="158" id="Yh0-Xj-GYP"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -63,21 +66,60 @@
                                     <outlet property="delegate" destination="lp6-Qk-gS0" id="iGJ-gF-jQa"/>
                                 </connections>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-Qk-gS0">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lp6-Qk-gS0">
                                 <rect key="frame" x="0.0" y="231" width="550" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="whP-gf-Uak" id="T2r-uD-syv"/>
                                     <outlet property="delegate" destination="whP-gf-Uak" id="v7M-Iz-M3n"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-Pj-h67">
-                                <rect key="frame" x="0.0" y="203" width="550" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzK-eb-wrm">
+                                <rect key="frame" x="159" y="49" width="233" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9mo-3o-cFz"/>
+                                </constraints>
+                                <state key="normal" title="Picker in Alert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAlert:" destination="whP-gf-Uak" eventType="touchUpInside" id="1xu-5D-q7v"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFw-Pj-h67">
+                                <rect key="frame" x="0.0" y="196" width="550" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="62T-Xb-nqe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gzK-eb-wrm" firstAttribute="trailing" secondItem="qy0-iQ-vlf" secondAttribute="trailing" id="0pp-Tj-OU1"/>
+                            <constraint firstItem="qy0-iQ-vlf" firstAttribute="top" secondItem="9ZE-U5-jQa" secondAttribute="bottom" id="15y-Kq-QtX"/>
+                            <constraint firstItem="iRO-wF-azf" firstAttribute="centerX" secondItem="gzK-eb-wrm" secondAttribute="centerX" id="2Dn-ZG-JaW"/>
+                            <constraint firstItem="O9F-au-q60" firstAttribute="centerY" secondItem="Y4c-LJ-mNw" secondAttribute="centerY" id="2PH-BZ-QOe"/>
+                            <constraint firstItem="O9F-au-q60" firstAttribute="leading" secondItem="Y4c-LJ-mNw" secondAttribute="leading" id="6GX-ry-Cp4"/>
+                            <constraint firstItem="lp6-Qk-gS0" firstAttribute="top" secondItem="cFw-Pj-h67" secondAttribute="bottom" constant="8" symbolic="YES" id="9JN-ya-ehC"/>
+                            <constraint firstItem="cFw-Pj-h67" firstAttribute="centerX" secondItem="H2L-kH-Tfo" secondAttribute="centerX" id="9wO-uQ-FnE"/>
+                            <constraint firstItem="Y4c-LJ-mNw" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="19" id="A5i-lh-puE"/>
+                            <constraint firstItem="iRO-wF-azf" firstAttribute="top" secondItem="gzK-eb-wrm" secondAttribute="bottom" constant="3" id="Em7-Qs-5vJ"/>
+                            <constraint firstItem="lp6-Qk-gS0" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="LEJ-Dx-01P"/>
+                            <constraint firstItem="O9F-au-q60" firstAttribute="trailing" secondItem="Y4c-LJ-mNw" secondAttribute="trailing" id="OlB-Xw-DDQ"/>
+                            <constraint firstItem="gzK-eb-wrm" firstAttribute="leading" secondItem="qy0-iQ-vlf" secondAttribute="leading" id="R3s-Gn-OCe"/>
+                            <constraint firstItem="cFw-Pj-h67" firstAttribute="leading" secondItem="lp6-Qk-gS0" secondAttribute="leading" id="dtz-gc-Rdo"/>
+                            <constraint firstItem="cFw-Pj-h67" firstAttribute="top" secondItem="H2L-kH-Tfo" secondAttribute="bottom" constant="7" id="e4h-Dx-Yi9"/>
+                            <constraint firstItem="qy0-iQ-vlf" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="le0-LU-9lO"/>
+                            <constraint firstItem="O9F-au-q60" firstAttribute="top" secondItem="iRO-wF-azf" secondAttribute="bottom" constant="2" id="nc8-4z-ozv"/>
+                            <constraint firstItem="Y4c-LJ-mNw" firstAttribute="top" secondItem="iRO-wF-azf" secondAttribute="bottom" constant="6" id="ogf-ER-Dp5"/>
+                            <constraint firstItem="H2L-kH-Tfo" firstAttribute="centerX" secondItem="Y4c-LJ-mNw" secondAttribute="centerX" id="s61-Io-tVQ"/>
+                            <constraint firstItem="Y4c-LJ-mNw" firstAttribute="centerX" secondItem="iRO-wF-azf" secondAttribute="centerX" id="uBd-NH-92D"/>
+                            <constraint firstItem="H2L-kH-Tfo" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" constant="159" id="uSj-Em-wTA"/>
+                            <constraint firstItem="cFw-Pj-h67" firstAttribute="trailing" secondItem="lp6-Qk-gS0" secondAttribute="trailing" id="v0f-Ko-FUk"/>
+                            <constraint firstItem="gzK-eb-wrm" firstAttribute="top" secondItem="qy0-iQ-vlf" secondAttribute="bottom" constant="8" symbolic="YES" id="zn5-Aj-blK"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="550" height="500"/>
@@ -89,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170" y="212"/>
+            <point key="canvasLocation" x="-192" y="144"/>
         </scene>
     </scenes>
 </document>
