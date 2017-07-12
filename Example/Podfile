@@ -1,11 +1,12 @@
+platform :ios, '8.0'
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'FFGlobalAlertController_Example', :exclusive => true do
+target 'FFGlobalAlertController_Example' do
   pod "FFGlobalAlertController", :path => "../"
 end
 
-target 'FFGlobalAlertController_Tests', :exclusive => true do
+target 'FFGlobalAlertController_Tests'  do
   pod "FFGlobalAlertController", :path => "../"
 
   
